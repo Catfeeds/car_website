@@ -37,7 +37,7 @@ class AboutsController extends Controller
     public function show($id, Content $content)
     {
         return $content
-            ->header('Detail')
+            ->header('关于我们')
             ->description('description')
             ->body($this->detail($id));
     }
@@ -52,8 +52,7 @@ class AboutsController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('Edit')
-            ->description('description')
+            ->header('关于我们')
             ->body($this->form()->edit($id));
     }
 
@@ -66,8 +65,7 @@ class AboutsController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('Create')
-            ->description('description')
+            ->header('关于我们')
             ->body($this->form());
     }
 
@@ -79,13 +77,27 @@ class AboutsController extends Controller
     protected function grid()
     {
         $grid = new Grid(new About);
-
-        $grid->id('Id');
-        $grid->phone('Phone');
-        $grid->email('Email');
-        $grid->address('Address');
-        $grid->created_at('Created at');
-        $grid->updated_at('Updated at');
+        $grid->column('redirector', '说明')->display(function () {
+                return <<<CODEEND
+新用户请点击新建按钮，如果长时间未跳转，请点击右侧的编辑按钮
+<script>
+$(document).ready(function () {
+    $('.fa-edit').each(function (i, item) {
+        $(item).click();
+        return;
+    });
+});
+</script>
+CODEEND;
+        });
+        $grid->disableRowSelector();
+        $grid->disableFilter();
+        $grid->disableExport();
+        $grid->actions(function($action) {
+            $action->disableDelete();
+        });
+        $grid->disablePagination();
+       
 
         return $grid;
     }
@@ -119,9 +131,33 @@ class AboutsController extends Controller
     {
         $form = new Form(new About);
 
-        $form->mobile('phone', 'Phone');
-        $form->email('email', 'Email');
-        $form->text('address', 'Address');
+        $form->text('phone', '客服电话');
+        $form->email('email', '邮箱');
+        $form->text('address', '公司地址');
+
+        $form->tools(function (Form\Tools $tools) {
+
+
+            // 去掉`删除`按钮
+            $tools->disableDelete();
+
+            // 去掉`查看`按钮
+            $tools->disableView();
+        });
+        $form->footer(function ($footer) {
+
+            // 去掉`重置`按钮
+            $footer->disableReset();
+
+            // 去掉`查看`checkbox
+            $footer->disableViewCheck();
+
+            // 去掉`继续编辑`checkbox
+            $footer->disableEditingCheck();
+            // 去掉`继续创建`checkbox
+            $footer->disableCreatingCheck();
+
+        });
 
         return $form;
     }
