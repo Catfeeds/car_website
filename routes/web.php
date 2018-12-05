@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','IndexController@home')->name('home');
+Route::get('/about','IndexController@about')->name('about');
+Route::get('/branch','IndexController@branch')->name('branch');
+Route::get('/member','IndexController@member')->name('member');
+Route::get('/local','IndexController@local')->name('local');
+Route::get('/culture','IndexController@culture')->name('culture');
+Route::get('/product', 'IndexController@product')->name('product');
+Route::get('/product_info', 'IndexController@product_info')->name('product_info');
