@@ -21,7 +21,7 @@
                         <h5>公司简介</h5>
                         <ul class="recent-post helpful_post">
                             <li>
-                                <h6><a href="services.html">公司详情</a></h6>
+                                <h6><a href="{{route('detail')}}">公司详情</a></h6>
                             </li>
                             <li>
                                 <h6><a href="{{route('member')}}">公司人员</a></h6>

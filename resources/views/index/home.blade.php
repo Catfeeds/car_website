@@ -91,12 +91,9 @@
         <div class="box">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="{{asset('index/images/slider1.jpg')}}" alt=""></div>
-                    <div class="swiper-slide"><img src="{{asset('index/images/slider2.jpg')}}" alt=""></div>
-                    <div class="swiper-slide"><img src="{{asset('index/images/slider3.jpg')}}" alt=""></div>
-                    <div class="swiper-slide"><img src="{{asset('index/images/service1.jpg')}}" alt=""></div>
-                    <div class="swiper-slide"><img src="{{asset('index/images/service2.jpg')}}" alt=""></div>
-                    <div class="swiper-slide"><img src="{{asset('index/images/service3.jpg')}}" alt=""></div>
+                    @foreach($banners as $banner) 
+                    <div class="swiper-slide"><img src="{{env('APP_URL').'/uploads/'.$banner->image}}" alt=""></div>
+                    @endforeach
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -109,21 +106,7 @@
     </div>
 
 
-    <section class="service_list_section">
-        <div class="container">
-            <div class="base_header_2">
-                <h3>公司简介</h3>
-            </div>
-            <div class="row">
-                <div class="jieshao">
-                    <p class="jieshao_1">jieshaojieshaojieshaojieshao jieshao jieshao jieshao jieshao  </p>
-                    <img alt="team" class="img-responsive" src="images/service4.jpg">
-                </div>
-            </div>
-            <!--End: row-->
-        </div>
-        <!-- End: container-->
-    </section>
+    
 
 
     <section class="work-section">
@@ -135,56 +118,21 @@
             <!-- End:  heading -->
             <div class="row">
                 <div class="owl-carousel owl-theme col-md-12" id="servic">
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service1.jpg">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">地址</p>
-                            <p>tell：12345678910</p>
-                            <p class="right"><a href="single-blog.html">商品介绍</a></p>
-                            <div class="clear"></div>
-                        </div>
+                     @foreach($branchs as $branch)
+                <div class="service_list">
+                    <div class="service_img">
+                        <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$branch->image}}">
                     </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service2.jpg">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">地址</p>
-                            <p>tell：12345678910</p>
-                            <p class="right"><a href="single-blog.html">商品介绍</a></p>
-                            <div class="clear"></div>
-                        </div>
+                    <div class="service_para hei">
+                        <a href="blog_1.html"><h5>{{$branch->name}}</h5></a>
+                        <p>{{$branch->address}}</p>
+                        <p>tell：{{$branch->phone}}</p>
+                        <p class="right mar"><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>
+                        <div class="clear"></div>
                     </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service3.jpg">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">地址</p>
-                            <p>tell：12345678910</p>
-                            <p class="right"><a href="single-blog.html">商品介绍</a></p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{asset('index/images/service4.jpg')}}">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">地址</p>
-                            <p>tell：12345678910</p>
-                            <p class="right"><a href="single-blog.html">商品介绍</a></p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
+                </div>
+                @endforeach
+                    
                     <!--/Item -->
                     <!-- End : Tab pane 1 -->
                 </div>
@@ -206,48 +154,18 @@
             </div>
             <div class="row">
                 <div class="owl-carousel owl-theme col-md-12" id="servic_1">
+                    @foreach($members as $member)
                     <div class="service_list">
                         <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{asset('index/images/service1.jpg')}}">
+                            <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$member->image}}">
                         </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5>名字</h5></a>
-                            <p class="ind">介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍</p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{asset('index/images/service2.jpg')}}">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5>名字</h5></a>
-                            <p>介绍</p>
-                            <div class="clear"></div>
+                        <div class="service_para hei">
+                            <a href="services.html"><h5>{{$member->name}}</h5></a>
+                            <p>{{$member->content}}</p>
                         </div>
                     </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{asset('index/images/service3.jpg')}}">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5>名字</h5></a>
-                            <p>介绍</p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{asset('index/images/service4.jpg')}}">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5>名字</h5></a>
-                            <p>介绍</p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
+                   @endforeach
+                    
                     <!--/Item -->
                     <!-- End : Tab pane 1 -->
                 </div>
@@ -272,48 +190,18 @@
             <!-- End:  heading -->
             <div class="row">
                 <div class="owl-carousel owl-theme col-md-12" id="servic_2">
+                    @foreach($locals as $local)
                     <div class="service_list">
                         <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service1.jpg">
+                            <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$local->image}}">
                         </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">介绍</p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service2.jpg">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">介绍</p>
-                            <div class="clear"></div>
+                        <div class="service_para hei">
+                            <a href="services.html"><h5>{{$local->name}}</h5></a>
+                            <p>{{$local->content}}</p>
                         </div>
                     </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service3.jpg">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">介绍</p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service4.jpg">
-                        </div>
-                        <div class="service_para">
-                            <a href="services.html"><h5 class="name">名字</h5></a>
-                            <p class="dizhi">介绍</p>
-                            <div class="clear"></div>
-                        </div>
-                    </div>
+                    @endforeach
+                    
                     <!--/Item -->
                     <!-- End : Tab pane 1 -->
                 </div>

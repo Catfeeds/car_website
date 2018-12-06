@@ -26,7 +26,7 @@
         <div class="container">
             <div class="base_header_2">
                 <h3>关于我们</h3>
-                <p>Subjects to ecstatic children he could ye leave up as built match. Dejection agreeable attention set suspected led offending dmitting an performed supposing by garden agreed matter .</p>
+                <p>{!! $detail->content !!}</p>
             </div>
             <div class="row service_list_warp">
                 <div class="col-sm-4 col-xs-12 wow fadeInUp">
@@ -34,7 +34,7 @@
                     <div class="serv_list">
 
                         <h4>地址</h4>
-                        <div class="service_list_pa"> dolor sit amet cons ectetur adipi scing elited asellu id lectu quis duia cosn splacet amet cons ectetu adipi scing id </div>
+                        <div class="service_list_pa"> {{$abouts->address}}</div>
                     </div>
                     <!-- End: .about-item -->
                 </div>
@@ -43,7 +43,7 @@
                     <div class="serv_list">
 
                         <h4>电话</h4>
-                        <div class="service_list_pa"> dolor sit amet cons ectetur adipi scing elited asellu id lectu quis duia cosn splacet amet cons ectetu adipi scing id </div>
+                        <div class="service_list_pa"> {{$abouts->phone}}</div>
                     </div>
                     <!-- End: .about-item -->
                 </div>
@@ -52,7 +52,7 @@
                     <div class="serv_list">
 
                         <h4>邮箱</h4>
-                        <div class="service_list_pa"> dolor sit amet cons ectetur adipi scing elited asellu id lectu quis duia cosn splacet amet cons ectetu adipi scing id </div>
+                        <div class="service_list_pa"> {{$abouts->email}}</div>
                     </div>
                     <!-- End: .about-item -->
                 </div>

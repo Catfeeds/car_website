@@ -77,7 +77,7 @@
         <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
             <div class="col-sm-12">
                 <!-- Headline Goes Here -->
-                <h4><a href="index.html"> 首页 </a> / 详情 </h4>
+                <h4><a href="{{route('home')}}"> 首页 </a> / 详情 </h4>
                 <h3>具体详情</h3>
             </div>
         </div>
@@ -97,24 +97,34 @@
         <div class="box">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
-                    <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
+                    @foreach($goods->banner as $banner)
+                    <div class="swiper-slide"><img class="img_1" src="{{env('APP_URL').'/uploads/'.$banner}}" alt=""></div>
+                    @endforeach
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
             <div>
-                <h5 class="left">宝马5系</h5>
-                <p class="right jiage" style="color: red;">15万~17万</p>
+                <h5 class="left">{{$goods->name}}</h5>
+                <p class="right jiage" style="color: red;">价格：{{$goods->price}}</p>
                 <div class="clear"></div>
-                <p class="juti">具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情具体详情</p>
+                <p >{!! $goods->content !!}</p>
             </div>
         </div>
     </div>
     <!-- End: container-->
 </section>
-<!-- End: Service Section
 
 
+
+@stop
+@section('afterJavaScript')
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay : 3000,
+        speed:300,
+        autoplayDisableOnInteraction : false,
+    });
+</script>
 @stop

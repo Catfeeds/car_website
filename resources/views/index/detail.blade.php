@@ -12,8 +12,8 @@
         <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
             <div class="col-sm-12">
                 <!-- Headline Goes Here -->
-                <h4><a href="{{route('home')}}"> 首页 </a> / 文化 </h4>
-                <h3>企业文化</h3>
+                <h4><a href="{{route('home')}}"> 首页 </a> / 详情 </h4>
+                <h3>公司详情</h3>
             </div>
         </div>
         <!-- End: .row -->
@@ -30,8 +30,8 @@
 <section class="service_list_section service_list_sec_pg">
         <div class="container">
             <div class="base_header_2">
-                <h3>企业文化</h3>
-                <p>{!! $culture->content !!}</p>
+                <h3>公司详情</h3>
+                <p>{!! $detail->content !!}</p>
             </div>
             
             <!--End: row-->

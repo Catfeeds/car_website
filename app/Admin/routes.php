@@ -16,4 +16,6 @@ Route::group([
     $router->resource('/branch_info',BranchInfosController::class);
     $router->resource('/goods',GoodsController::class);
     $router->resource('/about',AboutsController::class);
+    $router->resource('/member',MembersController::class);
+    $router->resource('/local',LocalsController::class);
 });

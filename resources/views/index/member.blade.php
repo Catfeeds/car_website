@@ -12,7 +12,7 @@
             <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
                 <div class="col-sm-12">
                     <!-- Headline Goes Here -->
-                    <h4><a href="index.html"> 首页 </a> / 人员 </h4>
+                    <h4><a href="{{route('home')}}"> 首页 </a> / 人员 </h4>
                     <h3>公司人员</h3>
                 </div>
             </div>
@@ -39,44 +39,17 @@
             <!-- End:  heading -->
             <div class="row">
                 <div class="owl-carousel owl-theme col-md-12" id="servic">
+                    @foreach($members as $member)
                     <div class="service_list">
                         <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service1.jpg">
+                            <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$member->image}}">
                         </div>
                         <div class="service_para hei">
-                            <a href="services.html"><h5>Office cleaning</h5></a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elited hasellus id lectus quis dui euismod con placerat ssa nec elit egestas efficitur </p>
+                            <a href="services.html"><h5>{{$member->name}}</h5></a>
+                            <p>{{$member->content}}</p>
                         </div>
                     </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service2.jpg">
-                        </div>
-                        <div class="service_para hei">
-                            <a href="services.html"><h5>Floor cleaning</h5></a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elited hasellus id lectus quis dui euismod con placerat ssa nec elit egestas efficitur </p>
-                        </div>
-                    </div>
-                    <!--/Item -->
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service3.jpg">
-                        </div>
-                        <div class="service_para hei">
-                            <a href="services.html"><h5>Carpet cleaning</h5></a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elited hasellus id lectus quis dui euismod con placerat ssa nec elit egestas efficitur </p>
-                        </div>
-                    </div>
-                    <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="images/service4.jpg">
-                        </div>
-                        <div class="service_para hei">
-                            <a href="services.html"><h5>Pool cleaning</h5></a>
-                            <p>Lorem ipsum dolor sit amet consectetur adipiscing elited hasellus id lectus quis dui euismod con placerat ssa nec elit egestas efficitur </p>
-                        </div>
-                    </div>
+                   @endforeach
                     <!--/Item -->
                     <!-- End : Tab pane 1 -->
                 </div>

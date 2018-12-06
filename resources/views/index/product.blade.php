@@ -90,7 +90,7 @@
             <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
                 <div class="col-sm-12">
                     <!-- Headline Goes Here -->
-                    <h4><a href="index.html"> 首页 </a> /  商品 </h4>
+                    <h4><a href="{{route('home')}}"> 首页 </a> /  商品 </h4>
                     <h3>分公司商品</h3>
                 </div>
             </div>
@@ -108,14 +108,14 @@
 ==================================================-->
     <div class="blog_container single_blog_page">
         <div class="container">
+            @foreach($goods as $good)
             <div class="row">
                 <div class="box left">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
-                            <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
-                            <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
-                            <div class="swiper-slide"><img class="img_1" src="images/service1.jpg" alt=""></div>
+                            @foreach($good->banner as $banner)
+                            <div class="swiper-slide"><img class="img_1" src="{{env('APP_URL').'/uploads/'.$banner}}" alt=""></div>
+                            @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -123,16 +123,28 @@
                 </div>
 
                 <div class="left box_1">
-                    <h4 class="name">宝马5系</h4>
-                    <p class="xiangqing">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
-                    <p class="bottom">参考价格：<span style="color: red;">15万~17万</span></p>
-                    <p class="pos"><a href="shopxiangqing.html" style="color: red;">查看具体详情</a></p>
+                    <h4 class="name">{{$good->name}}</h4>
+                    <p class="xiangqing">{{var_dump($good->banner)}}</p>
+                    <p class="bottom">参考价格：<span style="color: red;">{{$good->price}}</span></p>
+                    <p class="pos"><a href="{{route('product_info',['goods_id'=>$good->id])}}" style="color: red;">查看具体详情</a></p>
                 </div>
                 <div class="clear"></div>
             </div>
+            @endforeach
         </div>
         <!-- Container /- -->
     </div>
     <!-- End : Blog Page Content 
 ==================================================-->
+@stop
+@section('afterJavaScript')
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: true,
+        autoplay : 3000,
+        speed:300,
+        autoplayDisableOnInteraction : false,
+    });
+</script>
 @stop

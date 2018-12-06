@@ -1,4 +1,4 @@
-<!-- ::::::::::::::::::::::::::: Start: Preloader section ::::::::::::::::::::::::::: -->
+
     <div id="preloader"></div>
     <!-- ::::::::::::::::::::::::::: End: Preloader section ::::::::::::::::::::::::::: -->
 
@@ -14,14 +14,10 @@
                 </div>
                 <div class="header_top_location">
                     <div class="top_location">
-                        <i class="icon_clock_alt"></i>
-                        <p>营业时间</p>
-                        <span> 8:00AM - 6:00PM</span>
+                        
                     </div>
                     <div class="top_location">
-                        <i class="icon_phone"></i>
-                        <p>联系我们</p>
-                        <span>014 7422 866</span>
+                        
                     </div>                  
                 </div>
 
@@ -43,7 +39,7 @@
                         </li>
                         <li class="has-sub"><a href="{{route('home')}}" title="page">公司简介</a>
                             <ul>
-                                <li><a href="services.html" title="Gallery">公司详情</a>
+                                <li><a href="{{route('detail')}}" title="Gallery">公司详情</a>
                                 </li>
                                 <li><a href="{{route('member')}}" title="Gallery">公司人员</a>
                                 </li>
@@ -63,4 +59,4 @@
         </div>
         <!--/ container -->
     </div>
-    <!-- End: header navigation -->
+    <!-- End: header navigation
