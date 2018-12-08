@@ -42,18 +42,27 @@
             -webkit-align-items: center;
             align-items: center;
         }
+        .swiper-container{
+            width: 100%;
+            height: 100%;
+
+        }
+        .swiper-container img{
+            width: 100%;
+            height: 100%;
+        }
         .row{
             position: relative;
         }
         .box{
-            width: 50%;
-            height: 300px;
+            width: 40%;
+            height: 250px;
             margin: 20px auto;
         }
         .box_1{
-            width: 28rem;
+            width: 34rem;
             height: 300px;
-            margin: 20px 50px 0;
+            margin: 20px 70px 0;
         }
         .img_1{
             width: 100%;
@@ -63,8 +72,10 @@
             overflow: hidden;
             text-overflow: ellipsis;
             display: -webkit-box;
+            line-clamp: 5;
             -webkit-line-clamp: 5;
             -webkit-box-orient: vertical;
+            
         }
         .name{
             overflow: hidden;
@@ -106,16 +117,15 @@
 
     <!-- Start : Blog Page Content  
 ==================================================-->
-    <div class="blog_container single_blog_page">
+    <div class="blog_container single_blog_page" style="padding-bottom: 100px;">
         <div class="container">
             @foreach($goods as $good)
             <div class="row">
                 <div class="box left">
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            @foreach($good->banner as $banner)
-                            <div class="swiper-slide"><img class="img_1" src="{{env('APP_URL').'/uploads/'.$banner}}" alt=""></div>
-                            @endforeach
+                            
+                            <div class="swiper-slide"><img class="img_1" src="{{env('APP_URL').'/uploads/'.$good->image}}" alt=""></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -124,7 +134,7 @@
 
                 <div class="left box_1">
                     <h4 class="name">{{$good->name}}</h4>
-                    <p class="xiangqing">{{var_dump($good->banner)}}</p>
+                    <p class="xiangqing">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
                     <p class="bottom">参考价格：<span style="color: red;">{{$good->price}}</span></p>
                     <p class="pos"><a href="{{route('product_info',['goods_id'=>$good->id])}}" style="color: red;">查看具体详情</a></p>
                 </div>
@@ -139,12 +149,12 @@
 @stop
 @section('afterJavaScript')
 <script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-        autoplay : 3000,
-        speed:300,
-        autoplayDisableOnInteraction : false,
-    });
+    // var swiper = new Swiper('.swiper-container', {
+    //     pagination: '.swiper-pagination',
+    //     paginationClickable: true,
+    //     autoplay : 3000,
+    //     speed:300,
+    //     autoplayDisableOnInteraction : false,
+    // });
 </script>
 @stop

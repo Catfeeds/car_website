@@ -130,7 +130,7 @@ class LocalsController extends Controller
         $form->text('content', '简介');
         $form->image('image', '图片');
         $form->switch('is_show', '是否展示');
-        $form->switch('sort', '排序')->default(50);
+        $form->number('sort', '排序')->default(50);
 
         $form->tools(function (Form\Tools $tools) {
 

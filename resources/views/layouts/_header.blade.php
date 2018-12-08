@@ -9,16 +9,20 @@
         <div class="container">
             <div class="row">
                 <div class="header_logo">
-                    <a href="index.html"><img src="images/logo.png" alt="">
+                    <a href="index.html"><img src="" alt="">
                     </a>
                 </div>
                 <div class="header_top_location">
                     <div class="top_location">
-                        
+                        <i class="icon_clock_alt"></i>
+                        <p>营业时间</p>
+                        <span> 8:00AM - 6:00PM</span>
                     </div>
                     <div class="top_location">
-                        
-                    </div>                  
+                        <i class="icon_phone"></i>
+                        <p>联系我们</p>
+                        <span>{{\App\Models\About::find(1)->phone}}</span>
+                    </div>                     
                 </div>
 
                 <!-- End: social-nav -->
@@ -35,9 +39,15 @@
                     <ul>
                         <li><a class="active" href="{{route('home')}}">首页</a>
                         </li>
+                        <li><a href="{{route('detail')}}" title="Gallery">公司详情</a>
+                        </li>
+                        <li><a href="{{route('culture')}}" title="Services">企业文化</a>
+                                </li>
+                                <li><a href="{{route('branch')}}" title="blog">分公司简介</a>
+                        </li>
                         <li><a href="{{route('about')}}">关于我们</a>
                         </li>
-                        <li class="has-sub"><a href="{{route('home')}}" title="page">公司简介</a>
+                        {{-- <li class="has-sub"><a href="{{route('home')}}" title="page">公司简介</a>
                             <ul>
                                 <li><a href="{{route('detail')}}" title="Gallery">公司详情</a>
                                 </li>
@@ -46,11 +56,11 @@
                                 <li><a href="{{route('local')}}" title="Services">办公场所</a>
                                 </li>
                                 <li><a href="{{route('culture')}}" title="Services">企业文化</a>
-
+                                </li>
                             </ul>
                         </li>
                         <li><a href="{{route('branch')}}" title="blog">分公司简介</a>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
 
@@ -59,4 +69,4 @@
         </div>
         <!--/ container -->
     </div>
-    <!-- End: header navigation
+    

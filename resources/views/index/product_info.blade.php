@@ -56,8 +56,14 @@
             -webkit-align-items: center;
             align-items: center;
         }
+        .swiper-container{
+            width: 100%;
+            height: 100%;
+        }
+
         .box{
             margin: 10px 50px;
+            height: 400px;
         }
         .box .swiper-container img{
             width: 100%;
@@ -78,7 +84,7 @@
             <div class="col-sm-12">
                 <!-- Headline Goes Here -->
                 <h4><a href="{{route('home')}}"> 首页 </a> / 详情 </h4>
-                <h3>具体详情</h3>
+                <h3>商品详情</h3>
             </div>
         </div>
         <!-- End: .row -->
@@ -92,9 +98,9 @@
 
 <!-- Start: Service Section
 ==================================================-->
-<section class="service_list_section">
+<section class="service_list_section" style="padding-bottom: 150px;">
     <div class="container">
-        <div class="box">
+        <div class="box" style=" width: 70%; margin: 0 auto;">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     @foreach($goods->banner as $banner)

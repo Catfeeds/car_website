@@ -1,6 +1,5 @@
-<!-- Start:Footer Section 
-==================================================-->
-    <footer class="footer-section">
+ 
+    <footer class="footer-section" style="margin-top: -50px;">
         <div class="container">
             <div class="row">
                 <!-- Start: About -->
@@ -23,12 +22,12 @@
                             <li>
                                 <h6><a href="{{route('detail')}}">公司详情</a></h6>
                             </li>
-                            <li>
+                            {{-- <li>
                                 <h6><a href="{{route('member')}}">公司人员</a></h6>
                             </li>
                             <li>
                                 <h6><a href="{{route('local')}}">办公场所</a></h6>
-                            </li>
+                            </li> --}}
                             <li>
                                 <h6><a href="{{route('culture')}}">企业文化</a></h6>
                             </li>
@@ -65,22 +64,16 @@
 
                     </div>
                 </div>
-                <!-- End: CONTACT INFO -->
-                <!-- Start:Subfooter -->
-                <div class="subfooter">
-                    <div class="row">
-                        <div class="col-sm-11 col-xs-10">
-                            <div class="copyright_text">@2018 klinarmen - HTML Template From <a href="http://www.17sucai.com/">Wcompany</a>
-                            </div>
+                <div class="col-sm-11 col-xs-10">
+                           
                         </div>
                         <div class="col-sm-1 col-xs-2">
                             <a class="scrollup" href="#"></a>
                         </div>
-                    </div>
-                </div>
-                <!-- End:Subfooter -->
+                <!-- End: CONTACT INFO -->
+              
             </div>
         </div>
     </footer>
     <!-- End:Footer Section 
-========================================-->
+========================================

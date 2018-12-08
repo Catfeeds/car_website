@@ -1,20 +1,26 @@
 @extends('layouts.app')
 @section('content')
-    <header id="page-top" class="blog-banner">
-        <!-- Start: Header Content -->
-        <div class="container" id="blog">
-            <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
-                <div class="col-sm-12">
-                    <!-- Headline Goes Here -->
-                    <h4><a href="index.html"> 首页</a> / 我们 </h4>
-                    <h3>关于我们</h3>
-                </div>
+<style>
+    .hei{
+        min-height: 20rem;
+    }
+</style>
+<!-- header -->
+<header id="page-top" class="blog-banner">
+    <!-- Start: Header Content -->
+    <div class="container" id="blog">
+        <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-sm-12">
+                <!-- Headline Goes Here -->
+                <h4><a href="{{route('home')}}"> 首页 </a> / 我们 </h4>
+                <h3>关于我们</h3>
             </div>
-            <!-- End: .row -->
         </div>
-        <!-- End: Header Content -->
-    </header>
-    <!--/. header -->
+        <!-- End: .row -->
+    </div>
+    <!-- End: Header Content -->
+</header>
+<!--/. header -->
 
     <!-- End: Header Section
 ==================================================-->
@@ -22,11 +28,22 @@
  
  <!-- Start: Service list Section 
 ==================================================-->
+    <style type="text/css">
+        p{
+            margin: 0;
+            
+
+        }
+    </style>
+
     <section class="service_list_section service_list_sec_pg">
         <div class="container">
-            <div class="base_header_2">
+            <div class="base_header_2" style="width: 86%;">
                 <h3>关于我们</h3>
-                <p>{!! $detail->content !!}</p>
+                <div style="text-align: left;">
+                    <p >{!! $detail->content !!}</p>
+                </div>
+                
             </div>
             <div class="row service_list_warp">
                 <div class="col-sm-4 col-xs-12 wow fadeInUp">
@@ -34,7 +51,7 @@
                     <div class="serv_list">
 
                         <h4>地址</h4>
-                        <div class="service_list_pa"> {{$abouts->address}}</div>
+                        <div class="service_list_pa" style="width: 200px"> {{$abouts->address}}</div>
                     </div>
                     <!-- End: .about-item -->
                 </div>
@@ -43,7 +60,7 @@
                     <div class="serv_list">
 
                         <h4>电话</h4>
-                        <div class="service_list_pa"> {{$abouts->phone}}</div>
+                        <div class="service_list_pa" style="width: 200px"> {{$abouts->phone}}</div>
                     </div>
                     <!-- End: .about-item -->
                 </div>
@@ -52,7 +69,7 @@
                     <div class="serv_list">
 
                         <h4>邮箱</h4>
-                        <div class="service_list_pa"> {{$abouts->email}}</div>
+                        <div class="service_list_pa" style="width: 200px"> {{$abouts->email}}</div>
                     </div>
                     <!-- End: .about-item -->
                 </div>

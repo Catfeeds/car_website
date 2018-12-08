@@ -24,12 +24,17 @@
 
 <!-- End: Header Section
 ==================================================-->
-
+<style type="">
+    p{
+        margin: 0;
+        text-align: left;
+    }
+</style>
 <!-- Start: Service Section
 ==================================================-->
 <section class="service_list_section service_list_sec_pg">
         <div class="container">
-            <div class="base_header_2">
+            <div class="base_header_2" style="width: 86%;">
                 <h3>公司详情</h3>
                 <p>{!! $detail->content !!}</p>
             </div>
@@ -38,7 +43,7 @@
         </div>
         <!-- End: container-->
     </section>
-<!-- End: Service Section
+
 
 
 @stop

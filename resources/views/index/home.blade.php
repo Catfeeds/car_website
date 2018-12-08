@@ -1,8 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <style type="text/css">
-	<style>
-        .jieshao{
+    .jieshao{
             margin: 0 auto;
             width: 70%;
         }
@@ -84,9 +83,11 @@
             width: 100%;
             height: 100%;
         }
-    </style>
 </style>
-	<div class="slides_wrapper">
+    {{-- <style text>
+        
+    </style> --}}
+	{{-- <div class="slides_wrapper">
         
         <div class="box">
             <div class="swiper-container">
@@ -94,6 +95,25 @@
                     @foreach($banners as $banner) 
                     <div class="swiper-slide"><img src="{{env('APP_URL').'/uploads/'.$banner->image}}" alt=""></div>
                     @endforeach
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+
+    </div> --}}
+    <div class="slides_wrapper">
+        
+        <div class="box">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                     @foreach($banners as $banner) 
+                    <div class="swiper-slide"><img src="{{env('APP_URL').'/uploads/'.$banner->image}}" alt=""></div>
+                    @endforeach
+                   
                 </div>
                 <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
@@ -120,14 +140,15 @@
                 <div class="owl-carousel owl-theme col-md-12" id="servic">
                      @foreach($branchs as $branch)
                 <div class="service_list">
-                    <div class="service_img">
-                        <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$branch->image}}">
+                    <div class="service_img img_1" style="height: 13.75rem; width: 22.5rem;">
+                        <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$branch->image}}" >
                     </div>
                     <div class="service_para hei">
                         <a href="blog_1.html"><h5>{{$branch->name}}</h5></a>
-                        <p>{{$branch->address}}</p>
+                        <p style="height: 50px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$branch->address}}</p>
                         <p>tell：{{$branch->phone}}</p>
-                        <p class="right mar"><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>
+                        <p class="right mar" ><a href="{{route('branch_info',['branch_id'=>$branch->id])}}" >分公司介绍</a></p>
+                        <p class="left mar" ><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -156,12 +177,12 @@
                 <div class="owl-carousel owl-theme col-md-12" id="servic_1">
                     @foreach($members as $member)
                     <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$member->image}}">
+                        <div class="service_img" style="height: 13.75rem; width: 22.5rem;">
+                            <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$member->image}}">
                         </div>
                         <div class="service_para hei">
                             <a href="services.html"><h5>{{$member->name}}</h5></a>
-                            <p>{{$member->content}}</p>
+                            <p style="height: 50px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$member->content}}</p>
                         </div>
                     </div>
                    @endforeach
@@ -192,12 +213,12 @@
                 <div class="owl-carousel owl-theme col-md-12" id="servic_2">
                     @foreach($locals as $local)
                     <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$local->image}}">
+                        <div class="service_img" style="height: 13.75rem; width: 22.5rem;">
+                            <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$local->image}}">
                         </div>
                         <div class="service_para hei">
                             <a href="services.html"><h5>{{$local->name}}</h5></a>
-                            <p>{{$local->content}}</p>
+                            <p style="height: 50px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$local->content}}</p>
                         </div>
                     </div>
                     @endforeach

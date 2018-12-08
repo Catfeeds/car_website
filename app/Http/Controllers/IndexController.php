@@ -75,4 +75,11 @@ class IndexController extends Controller
         $detail=UnitInfo::where('id',3)->first();
         return view('index.detail',compact('detail'));
     }
+
+    public function branch_info(Request $request)
+    {
+        $branch_id=$request->branch_id;
+        $branch=BranchInfo::find($branch_id);
+        return view('index.branch_info',compact('branch'));
+    }
 }

@@ -55,8 +55,8 @@
                 <div class="owl-carousel owl-theme col-md-12" id="servic">
                     @foreach($locals as $local)
                     <div class="service_list">
-                        <div class="service_img">
-                            <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$local->image}}">
+                        <div class="service_img" style="height: 13.75rem; width: 22.5rem;">
+                            <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$local->image}}">
                         </div>
                         <div class="service_para hei">
                             <a href="services.html"><h5>{{$local->name}}</h5></a>
@@ -73,6 +73,5 @@
         </div>
         <!--/.container -->
     </section>
-    <!-- End: Work Section 
-==================================================-->
+   
 @stop

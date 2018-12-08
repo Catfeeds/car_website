@@ -11,12 +11,21 @@
         clear: both;
     }
     .hei{
-        min-height: 13rem;
+        min-height: 13.9rem;
+        position: relative;
     }
     .mar{
         position: absolute;
         bottom: 10px;
         right: 30px;
+    }
+    .pos{
+        position: absolute;
+        bottom: 10px; 
+        width: 300px;
+    }
+    .pos p{
+        margin: 5px 0;
     }
 </style>
 <!-- header -->
@@ -52,15 +61,19 @@
             <div class="owl-carousel owl-theme col-md-12" id="servic">
                 @foreach($branchs as $branch)
                 <div class="service_list">
-                    <div class="service_img">
-                        <img alt="team" class="img-responsive" src="{{env('APP_URL').'/uploads/'.$branch->image}}">
+                    <div class="service_img" style="height: 13.75rem; width: 22.5rem;">
+                        <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$branch->image}}">
                     </div>
                     <div class="service_para hei">
                         <a href="blog_1.html"><h5>{{$branch->name}}</h5></a>
                         <p>{{$branch->address}}</p>
-                        <p>tell：{{$branch->phone}}</p>
-                        <p class="right mar"><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>
-                        <div class="clear"></div>
+                        <div class="pos">
+                                <p>tell：{{$branch->phone}}</p>
+                            <p class="right"><a href="{{route('branch_info',['branch_id'=>$branch->id])}}">分公司介绍</a></p>
+                            <p class="left "><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>
+                            <div class="clear"></div>
+                        </div>
+                        
                     </div>
                 </div>
                 @endforeach

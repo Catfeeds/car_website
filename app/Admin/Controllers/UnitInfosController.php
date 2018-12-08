@@ -92,7 +92,7 @@ class UnitInfosController extends Controller
             $actions->disableDelete();
         });
         $grid->disableExport();
-        $grid->disableCreateButton();
+        //$grid->disableCreateButton();
         $grid->disableFilter();
         $grid->disableRowSelector();
         return $grid;

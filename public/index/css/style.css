@@ -192,12 +192,13 @@ section {
 
 .base_header_2 {
   padding-bottom: 30px;
-  width: 59%;
+  width: 86%;
   margin: auto;
   text-align: center;
 }
 
 .base_header_2 h3 {
+
   position: relative;
   color: #414141;
   line-height: 32px;

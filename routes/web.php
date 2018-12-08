@@ -20,3 +20,4 @@ Route::get('/culture','IndexController@culture')->name('culture');
 Route::get('/product/{branch_id}', 'IndexController@product')->name('product');
 Route::get('/product_info', 'IndexController@product_info')->name('product_info');
 Route::get('/detail', 'IndexController@detail')->name('detail');
+Route::get('/branch_info', 'IndexController@branch_info')->name('branch_info');
