@@ -124,9 +124,15 @@ class MembersController extends Controller
     {
         $form = new Form(new Member);
 
-        $form->text('name', '员工名称');
-        $form->text('content', '员工简介');
-        $form->image('image', '图片');
+        $form->text('name', '员工名称')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->text('content', '员工简介')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->image('image', '图片')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
         $form->number('sort', '排序')->default(50);
         $form->switch('is_show', '是否展示')->default(0);
         $form->tools(function (Form\Tools $tools) {

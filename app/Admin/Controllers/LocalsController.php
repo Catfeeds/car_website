@@ -126,9 +126,15 @@ class LocalsController extends Controller
     {
         $form = new Form(new Local);
 
-        $form->text('name', '场所名称');
-        $form->text('content', '简介');
-        $form->image('image', '图片');
+        $form->text('name', '场所名称')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->text('content', '简介')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->image('image', '图片')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
         $form->switch('is_show', '是否展示');
         $form->number('sort', '排序')->default(50);
 

@@ -134,7 +134,7 @@
 
                 <div class="left box_1">
                     <h4 class="name">{{$good->name}}</h4>
-                    <p class="xiangqing">商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍商品介绍</p>
+                    <p class="xiangqing">{{$good->abstract}}</p>
                     <p class="bottom">参考价格：<span style="color: red;">{{$good->price}}</span></p>
                     <p class="pos"><a href="{{route('product_info',['goods_id'=>$good->id])}}" style="color: red;">查看具体详情</a></p>
                 </div>

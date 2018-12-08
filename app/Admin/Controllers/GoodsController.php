@@ -127,12 +127,25 @@ class GoodsController extends Controller
     {
         $form = new Form(new Good);
 
-        $form->select('branch_id', '所属分公司')->options(BranchInfo::all()->pluck('name','id'));
-        $form->text('name', '商品名称');
-        $form->image('image', '封面图片');
+        $form->select('branch_id', '所属分公司')->options(BranchInfo::all()->pluck('name','id'))->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->text('name', '商品名称')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->image('image', '封面图片')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
         $form->multipleImage('banner', '详情轮播图')->removable();
-        $form->text('price', '价格');
-        $form->editor('content', '图文详情');
+        $form->text('price', '价格')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->text('abstract', '简短介绍')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
+        $form->editor('content', '图文详情')->rules('required',[
+                    'required'=>'不能为空'
+            ]);
         $form->number('sort', '排序')->default(50);
         $form->switch('is_show', '是否展示');
         $form->tools(function (Form\Tools $tools) {
