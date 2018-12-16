@@ -27,7 +27,7 @@
             /*height: 100%;*/
         }
         body {
-            background: #eee;
+           
             font-size: 14px;
             color:#000;
             margin: 0;
@@ -61,10 +61,7 @@
             height: 100%;
         }
 
-        .box{
-            margin: 10px 50px;
-            height: 400px;
-        }
+        
         .box .swiper-container img{
             width: 100%;
         }
@@ -83,8 +80,8 @@
         <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
             <div class="col-sm-12">
                 <!-- Headline Goes Here -->
-                <h4><a href="{{route('home')}}"> 首页 </a> / 详情 </h4>
-                <h3>商品详情</h3>
+                <h4 style='color:#5C5449;'><a href="{{route('home')}}" style='color:#5C5449;'> 首页 </a> / 详情 </h4>
+                <h3 style='color:#5C5449;'>商品详情</h3>
             </div>
         </div>
         <!-- End: .row -->

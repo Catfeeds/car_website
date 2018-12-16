@@ -27,6 +27,10 @@
     .pos p{
         margin: 5px 0;
     }
+  .service_para a:hover{
+    color:red;
+    
+  }
 </style>
 <!-- header -->
 <header id="page-top" class="blog-banner">
@@ -35,8 +39,8 @@
         <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
             <div class="col-sm-12">
                 <!-- Headline Goes Here -->
-                <h4><a href="{{route('home')}}"> 首页 </a> / 介绍 </h4>
-                <h3>分公司介绍</h3>
+                <h4 style='color:#5C5449;'><a href="{{route('home')}}" style='color:#5C5449;'> 首页 </a> / 介绍 </h4>
+                <h3 style='color:#5C5449;'>分公司介绍</h3>
             </div>
         </div>
         <!-- End: .row -->
@@ -65,12 +69,12 @@
                         <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$branch->image}}">
                     </div>
                     <div class="service_para hei">
-                        <a href="blog_1.html"><h5>{{$branch->name}}</h5></a>
-                        <p>{{$branch->address}}</p>
+                         <a href="{{route('branch_info',['branch_id'=>$branch->id])}}"><h5>{{$branch->name}}</h5></a>
+                    <!--  <p>{{$branch->address}}</p>-->
                         <div class="pos">
                                 <p>tell：{{$branch->phone}}</p>
-                            <p class="right"><a href="{{route('branch_info',['branch_id'=>$branch->id])}}">分公司介绍</a></p>
-                            <p class="left "><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>
+                         <!--     <p class="right" ><a href="{{route('branch_info',['branch_id'=>$branch->id])}}" >分公司介绍</a></p>
+                            <p class="left " ><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>-->
                             <div class="clear"></div>
                         </div>
                         

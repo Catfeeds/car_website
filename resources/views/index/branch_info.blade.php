@@ -12,8 +12,8 @@
         <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
             <div class="col-sm-12">
                 <!-- Headline Goes Here -->
-                <h4><a href="{{route('home')}}"> 首页 </a> / 分公司 </h4>
-                <h3>分公司</h3>
+                <h4 style='color:#5C5449;'><a href="{{route('home')}}" style='color:#5C5449;'> 首页 </a> / 分公司 </h4>
+                <h3 style='color:#5C5449;'>分公司</h3>
             </div>
         </div>
         <!-- End: .row -->

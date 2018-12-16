@@ -44,17 +44,12 @@
             /*-webkit-box-orient: vertical;*/
         /*}*/
 
-        body {
-            background: #eee;
-            font-size: 14px;
-            color:#000;
-            margin: 0;
-            padding: 0;
-        }
+        
         .swiper-container {
             width: 100%;
             height: 100%;
-
+			position: relative;
+          	z-index:30;
         }
         .swiper-slide {
             text-align: center;
@@ -74,40 +69,27 @@
             -ms-flex-align: center;
             -webkit-align-items: center;
             align-items: center;
+          	
         }
         .box{
             width: 100%;
-            height: 40rem;
         }
         .box img{
             width: 100%;
             height: 100%;
         }
+  		.slides_wrapper .swiper-container .swiper-wrapper img{
+    		max-height: 500px;
+		}
+  .service_para a:hover{
+    color:red;
+    
+  }
 </style>
-    {{-- <style text>
-        
-    </style> --}}
-	{{-- <div class="slides_wrapper">
-        
-        <div class="box">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    @foreach($banners as $banner) 
-                    <div class="swiper-slide"><img src="{{env('APP_URL').'/uploads/'.$banner->image}}" alt=""></div>
-                    @endforeach
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-                <!-- Add Arrows -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
-
-    </div> --}}
+    
     <div class="slides_wrapper">
         
-        <div class="box">
+        <div class="box ">
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                      @foreach($banners as $banner) 
@@ -144,11 +126,11 @@
                         <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$branch->image}}" >
                     </div>
                     <div class="service_para hei">
-                        <a href="blog_1.html"><h5>{{$branch->name}}</h5></a>
-                        <p style="height: 50px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$branch->address}}</p>
+                        <h5><a href="{{route('branch_info',['branch_id'=>$branch->id])}}">{{$branch->name}}</a></h5>
+                      <!--  <p style="height: 50px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$branch->address}}</p>
                         <p>tell：{{$branch->phone}}</p>
                         <p class="right mar" ><a href="{{route('branch_info',['branch_id'=>$branch->id])}}" >分公司介绍</a></p>
-                        <p class="left mar" ><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>
+                        <p class="left mar" ><a href="{{route('product',['branch_id'=>$branch->id])}}">商品介绍</a></p>-->
                         <div class="clear"></div>
                     </div>
                 </div>
@@ -167,11 +149,14 @@
 
  
  <!-- End: Team Section 
-==================================================-->
+==================================================-->	
+	<div>
+    	<img style="width: 100%; max-height: 280px;" src="{{asset('index/images/banner-1.png')}}" alt="">
+	</div>
     <section class="service_list_section">
         <div class="container">
             <div class="base_header_2">
-                <h3>公司人员</h3>
+                <h3>车辆介绍</h3>
             </div>
             <div class="row">
                 <div class="owl-carousel owl-theme col-md-12" id="servic_1">
@@ -181,7 +166,7 @@
                             <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$member->image}}">
                         </div>
                         <div class="service_para hei">
-                            <a href="services.html"><h5>{{$member->name}}</h5></a>
+                            <h5>{{$member->name}}</h5>
                             <p style="height: 50px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$member->content}}</p>
                         </div>
                     </div>
@@ -217,7 +202,7 @@
                             <img alt="team" class="img-responsive" style="height: 100%; width: 100%;" src="{{env('APP_URL').'/uploads/'.$local->image}}">
                         </div>
                         <div class="service_para hei">
-                            <a href="services.html"><h5>{{$local->name}}</h5></a>
+                            <h5>{{$local->name}}</h5>
                             <p style="height: 50px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{$local->content}}</p>
                         </div>
                     </div>

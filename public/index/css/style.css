@@ -42,7 +42,9 @@ Primary use: Cleaning, floor cleaning
 @import url('../icon/elegant-icons/style.css');
 
 @import url('../css/font-awesome.min.css');
-
+*{
+	font-family:'微软雅黑';
+}
 body {
   font-size: 15px;
   font-family: 'Raleway', sans-serif;
@@ -577,7 +579,8 @@ section {
 }
 
 #navigation > ul > li:hover > a {
-  color: #1490D6;
+  color: red;
+  font-size:18px;
 }
 
 #navigation ul ul {
@@ -1346,17 +1349,17 @@ section {
 .owl-dot.active {
   background: #1490D6;
   position: relative;
-  width: 25px;
+  width: 31px;
   border-radius: 25px;
-  height: 8px;
+  height:13px;
 }
 
 .owl-dot {
   background: #d8d8d8;
   display: inline-block;
-  height: 8px;
+  height: 13px;
   margin: 0 4px;
-  width: 8px;
+  width: 13px;
   border-radius: 50%;
 }
 

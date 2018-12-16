@@ -23,7 +23,7 @@ class MembersController extends Controller
     public function index(Content $content)
     {
         return $content
-            ->header('员工信息')
+            ->header('车辆信息')
             ->description('.')
             ->body($this->grid());
     }
@@ -53,7 +53,7 @@ class MembersController extends Controller
     public function edit($id, Content $content)
     {
         return $content
-            ->header('员工信息')
+            ->header('车辆信息')
             ->description('修改')
             ->body($this->form()->edit($id));
     }
@@ -67,7 +67,7 @@ class MembersController extends Controller
     public function create(Content $content)
     {
         return $content
-            ->header('员工信息')
+            ->header('车辆信息')
             ->description('新增')
             ->body($this->form());
     }
@@ -81,12 +81,12 @@ class MembersController extends Controller
     {
         $grid = new Grid(new Member);
         $grid->model()->orderBy('sort', 'asc');
-        $grid->name('员工姓名');
+        $grid->name('车辆名称');
         $grid->content('简介');
         $grid->disableExport();
         $grid->filter(function($filter){
             $filter->disableIdFilter();
-            $filter->like('name', '员工姓名');
+            $filter->like('name', '车辆名称');
         });
         $grid->actions(function ($actions) {
                 $actions->disableView();
@@ -124,10 +124,10 @@ class MembersController extends Controller
     {
         $form = new Form(new Member);
 
-        $form->text('name', '员工名称')->rules('required',[
+        $form->text('name', '车辆名称')->rules('required',[
                     'required'=>'不能为空'
             ]);
-        $form->text('content', '员工简介')->rules('required',[
+        $form->text('content', '简介')->rules('required',[
                     'required'=>'不能为空'
             ]);
         $form->image('image', '图片')->rules('required',[

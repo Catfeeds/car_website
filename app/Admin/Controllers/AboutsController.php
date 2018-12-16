@@ -134,6 +134,8 @@ CODEEND;
         $form->text('phone', '客服电话');
         $form->email('email', '邮箱');
         $form->text('address', '公司地址');
+        $form->image('qq_image','qq二维码');
+        $form->image('wx_image','微信二维码');
 
         $form->tools(function (Form\Tools $tools) {
 

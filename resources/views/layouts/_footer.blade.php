@@ -1,77 +1,48 @@
+<style>
+  .row .phone{
+            margin-bottom: 5px;
+        }
+        .row .list .left{
+            padding: 0 10px;
+            border-left: 1px solid #515151;
+            margin-bottom: 5px;
+        }
+        .row .list .left:first-child {
+            border-left: none;
+            padding-left: 0;
+        }
+        .addres p{
+            margin: 0 10px 5px 0;
+
+        }
+        .company p{
+            margin: 0 0 5px 0;
+        }
  
-    <footer class="footer-section" style="margin-top: -50px;">
+</style>
+    <footer class="footer-section" style="background: #001534; padding-bottom: 42px;">
         <div class="container">
-            <div class="row">
-                <!-- Start: About -->
-                <div class="col-sm-3 col-xs-12">
-                    <div class="widget">
-                        <h5>首页</h5>
-                        <ul class="recent-post helpful_post">
-                            <li>
-                                <h6><a href="{{route('home')}}">进入首页</a></h6>
-                            </li>
-                        </ul>
-                    </div>
+            <div class="row col-lg-12 col-xs-12" style="color: #fff; ">
+                <div class="phone">
+                    <sapn>联系电话：</sapn>
+                    <span style="font-weight: 700; font-size: 26px; color: red;">{{\App\Models\About::find(1)->phone}}</span>
                 </div>
-                <!-- End: About -->
-                <!-- Start: Helpful Link -->
-                <div class="col-sm-3 col-xs-12">
-                    <div class="widget">
-                        <h5>公司简介</h5>
-                        <ul class="recent-post helpful_post">
-                            <li>
-                                <h6><a href="{{route('detail')}}">公司详情</a></h6>
-                            </li>
-                            {{-- <li>
-                                <h6><a href="{{route('member')}}">公司人员</a></h6>
-                            </li>
-                            <li>
-                                <h6><a href="{{route('local')}}">办公场所</a></h6>
-                            </li> --}}
-                            <li>
-                                <h6><a href="{{route('culture')}}">企业文化</a></h6>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="list">
+                    <div class="left"><a class="active" href="{{route('home')}}" style="color:#fff;">首页</a></div>
+                    <div class="left"><a href="{{route('detail')}}" style="color:#fff;">公司详情</a></div>
+                    <div class="left"><a href="{{route('culture')}}" style="color:#fff;">企业文化</a></div>
+                    <div class="left"><a href="{{route('branch')}}" style="color:#fff;">分公司简介</a></div>
+                    <div class="left"><a href="{{route('about')}}" style="color:#fff;">关于我们</a></div>
+                    <div style="clear: both;"></div>
                 </div>
-                <!-- End: Helpful Link -->
-
-                <!-- Start: Latest post -->
-                <div class="col-sm-3 col-xs-12">
-                    <div class="widget">
-                        <h5>分公司介绍</h5>
-                        <ul class="recent-post">
-                            <li>
-                                <h6><a href="{{route('branch')}}">分公司简介</a></h6>
-                            </li>
-                            <!--<li>-->
-                                <!--<h6><a href="#">分公司商品</a></h6>-->
-                            <!--</li>-->
-
-                        </ul>
-                    </div>
+                <div class="addres">
+                    <p class="left">地址：{{\App\Models\About::find(1)->address}}</p>
+                    <p class="left">总机：{{\App\Models\About::find(1)->phone}}</p>
+                    <div style="clear: both;"></div>
                 </div>
-                <!-- End: Latest post -->
-                <!-- Start: CONTACT INFO -->
-                <div class="col-sm-3 col-xs-12">
-                    <div class="widget">
-                        <h5>关于我们</h5>
-                        <ul class="recent-post">
-                            <li>
-                                <h6><a href="about.html">查看我们</a></h6>
-                            </li>
-                        </ul>
-
-                    </div>
+                <div class="company">
+                    <p>呈瑞峰集团</p>
                 </div>
-                <div class="col-sm-11 col-xs-10">
-                           
-                        </div>
-                        <div class="col-sm-1 col-xs-2">
-                            <a class="scrollup" href="#"></a>
-                        </div>
-                <!-- End: CONTACT INFO -->
-              
             </div>
         </div>
     </footer>

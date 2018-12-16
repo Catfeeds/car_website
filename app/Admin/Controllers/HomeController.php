@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         return $content
             ->header('官网后台管理')
-            ->description('.');
+            ->description(' ');
             
     }
 }
